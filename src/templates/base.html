@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.svg') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/null_style.css') }}">
+        <title>{% block title %}Forms-finder{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        {% block style %}{% endblock %}
+    </head>
+
+    <body>
+        <header>
+            {% block header %}
+                <h1 class="main_name">Forms-finder</h1>
+            {% endblock %}
+        </header>
+
+        <div class="body_bg">
+            <div class="top_correction"></div>
+            {% block body %}
+
+
+            {% endblock %}
+            <div class="bottom_correction"></div>
+        </div>
+
+        <footer>
+        {% block footer %}
+        <a class="dev_contact" href="https://t.me/elcapitansmetankins" target="_blank">
+            <img class="logo_telegram" src="{{ url_for('static', filename='/img/logo-telegram.svg') }}" alt="logoTel">
+            <div class="dev_contact_text">developer contact</div>
+        </a>
+        {% endblock %}
+        </footer>
+    </body>
+
+</html>

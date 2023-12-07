@@ -1,0 +1,99 @@
+body, header, footer, input, button {
+    margin: 0 auto;
+    max-width: 700px;
+    font-weight: 600;
+	font-family: "Open Sans", sans-serif;
+}
+
+header {
+	font-size: 44px;
+	color: #ffffff;
+    background: #383636;
+    height: 70px;
+    position: absolute;
+    left: auto;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+.main_name, .footer_text {
+    padding-top: 10px;
+    text-align: center;
+}
+
+a:link, a:active, a:visited {
+    color: #000000;
+}
+
+footer {
+    background: #899196;
+    height: 70px;
+    position: absolute;
+    left: auto;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+
+.body_bg {
+    background: #f3f3f3;
+    min-height: 100%;
+}
+
+.top_correction, .bottom_correction {
+    height: 70px;
+}
+
+.logo_telegram {
+    width: 64px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.logo_telegram:hover {
+    opacity: 80%;
+}
+
+footer {
+    display: flex;
+}
+
+.dev_contact {
+    display: flex;
+}
+
+.dev_contact_text {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    padding-top: 26px;
+}
+
+.user_photo {
+    right: 3px;
+    top: 3px;
+    width: 64px;
+    height:64 px;
+    border-radius: 8px;
+    position: absolute;
+}
+
+.header_links {
+    display: flex;
+    justify-content: center;
+}
+
+.header_links a {
+    width: 20%;
+    height: 70px;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 26px;
+    background: #383636;
+}
+
+.header_links a:hover {
+    background: red;
+}
