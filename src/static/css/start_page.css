@@ -1,12 +1,6 @@
-.buttons {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.button {
     font-size: 30px;
     font-weight: 600;
-}
-
-.button {
     width: 60%;
     height: 60px;
     margin-left: 20%;
@@ -15,8 +9,41 @@
     text-align: center;
     border-radius: 8px;
     background-color: #8db5e8;
+    transition: background-color 300ms linear;
+    box-shadow: 0 5px 5px grey;
 }
 
 .button:hover {
     background-color: #c6d9f1;
+    transition: background-color 300ms linear;
+}
+
+.button_clicked {
+    display: none;
+}
+
+#loading {
+    display: none;
+    margin-top: 30%;
+    margin-left: 40%;
+    width: 20%;
+    justify-content: center;
+}
+
+.gear {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+    animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+}
+
+.loading_text {
+    text-align: center;
+    font-size: 32px;
 }

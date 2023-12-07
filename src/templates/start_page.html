@@ -5,8 +5,17 @@
 {% endblock %}
 
 {% block body %}
-<div class="buttons">
-    <a href="/show_templates"><div class="button">Show all templates</div></a>
-    <a href="/run_tests"><div class="button">Run tests</div></a>
+<div id="loading">
+    <img class="gear" src="{{ url_for('static', filename='/img/gear.svg') }}" alt="logoTel">
+    <br>
+    <label class="loading_text">loading...</label>
 </div>
+
+<a id="load_data_button" href="/main_page" onclick='myFunction()'><div class="button">Load data</div></a>
+<script>
+document.getElementById("load_data_button").onclick = function() {
+    this.className = "button_clicked";
+    document.getElementById("loading").style.display = "block"
+}
+</script>
 {% endblock %}

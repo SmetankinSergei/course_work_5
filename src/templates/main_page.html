@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/start_page.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
+{% endblock %}
+
+{% block body %}
+<form class="search_bar" method="get">
+    <input class="search_input" type="text" placeholder="vacancy search">
+    <a class="search_button" href=""><div>search</div></a>
+</form>
+
+<a id="all_companies_button" href="/main_page" onclick='myFunction()'><div class="button">All companies</div></a>
+<a id="all_vacancies_button" href="/main_page" onclick='myFunction()'><div class="button">All vacancies</div></a>
+<a id="above_average_button" href="/main_page" onclick='myFunction()'><div class="button">Salary above average</div></a>
+{% endblock %}

@@ -19,6 +19,7 @@ header {
 
 .main_name, .footer_text {
     padding-top: 10px;
+    font-weight: 800;
     text-align: center;
 }
 
@@ -49,10 +50,12 @@ footer {
     width: 64px;
     margin-left: 3px;
     margin-top: 3px;
+    transition: opacity 300ms linear;
 }
 
 .logo_telegram:hover {
-    opacity: 80%;
+    opacity: 60%;
+    transition: opacity 300ms linear;
 }
 
 footer {

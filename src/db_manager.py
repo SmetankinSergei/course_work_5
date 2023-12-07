@@ -18,6 +18,18 @@ class DBManager:
         finally:
             conn.close()
 
+    def get_data(self):
+        conn = DBManager.__get_connector()
+        res = None
+        try:
+            with conn:
+                with conn.cursor() as cur:
+                    cur.execute('SELECT * FROM companies')
+                    res = cur.fetchall()
+        finally:
+            conn.close()
+        return res
+
     @staticmethod
     def __clear_data(table_name, main_cursor):
         main_cursor.execute(f"TRUNCATE TABLE {table_name} RESTART IDENTITY CASCADE;")
@@ -38,3 +50,6 @@ class DBManager:
             password=constants.PASSWORD
         )
         return conn
+
+    # cursor.execute('request')
+    # data = cursor.fetchall()
