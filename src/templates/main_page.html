@@ -6,12 +6,43 @@
 {% endblock %}
 
 {% block body %}
-<form class="search_bar" method="get">
-    <input class="search_input" type="text" placeholder="vacancy search">
-    <a class="search_button" href=""><div>search</div></a>
-</form>
+<div id="main_block">
+    <form class="search_bar" method="post">
+        <input class="search_input" type="text" name="keyword" placeholder="vacancy search">
+        <button type="submit" class="search_button"><div>search</div></button>
+    </form>
 
-<a id="all_companies_button" href="/main_page" onclick='myFunction()'><div class="button">All companies</div></a>
-<a id="all_vacancies_button" href="/main_page" onclick='myFunction()'><div class="button">All vacancies</div></a>
-<a id="above_average_button" href="/main_page" onclick='myFunction()'><div class="button">Salary above average</div></a>
+    <a id="all_companies_button" href="/all_companies_page" onclick='myFunction()'><div class="button">All companies</div></a>
+    <a id="all_vacancies_button" href="/all_vacancies_page/{{ 'normal' }}" onclick='myFunction()'><div class="button">All vacancies</div></a>
+    <a id="above_average_button" href="/all_vacancies_page/{{ 'avg_salary' }}" onclick='myFunction()'><div class="button">Salary above average</div></a>
+    <a id="average_salary_button" href="/main_page/{{ 'avg_salary' }}" onclick='myFunction()'><div class="button">Get average salary</div></a>
+    {% if avg_salary %}
+    <div class="avg_salary">{{ avg_salary }}</div>
+    {% endif %}
+</div>
+
+<div id="loading">
+    <img class="gear" src="{{ url_for('static', filename='/img/gear.svg') }}" alt="logoTel">
+    <br>
+    <label class="loading_text">loading...</label>
+</div>
+
+<script>
+document.getElementById("all_companies_button").onclick = function() {
+    document.getElementById("main_block").style.display = "none"
+    document.getElementById("loading").style.display = "block"
+}
+document.getElementById("all_vacancies_button").onclick = function() {
+    document.getElementById("main_block").style.display = "none"
+    document.getElementById("loading").style.display = "block"
+}
+document.getElementById("above_average_button").onclick = function() {
+    document.getElementById("main_block").style.display = "none"
+    document.getElementById("loading").style.display = "block"
+}
+document.getElementById("average_salary_button").onclick = function() {
+    document.getElementById("main_block").style.display = "none"
+    document.getElementById("loading").style.display = "block"
+}
+</script>
 {% endblock %}

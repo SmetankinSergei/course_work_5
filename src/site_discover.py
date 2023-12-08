@@ -48,4 +48,4 @@ class HeadHunterDiscover(SiteDiscover):
             low_border = salary_info['from'] if salary_info['from'] is not None else salary_info['to']
             high_border = salary_info['to'] if salary_info['to'] is not None else salary_info['from']
             return str(mean([low_border, high_border]))
-        return 'No data'
+        return '0'

@@ -1,0 +1,36 @@
+a {
+    display: block;
+    width: 90%;
+}
+
+.name {
+    margin: 20px 20%;
+    width: 60%;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    padding: 8px;
+}
+
+.vacancy {
+    width: 100%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.name, .vacancy {
+    border-radius: 8px;
+    background-color: #e4e3e3;
+    box-shadow: 0 5px 5px grey;
+}
+
+.vacancy {
+    background-color: #8db5e8;
+}
+
+.vacancy:hover {
+    background-color: #c6d9f1;
+    transition: background-color 300ms linear;
+}

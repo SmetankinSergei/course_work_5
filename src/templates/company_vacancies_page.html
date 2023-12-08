@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/start_page.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all_companies_page.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/company_vacancies_page.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="back_buttons_block" class="back_buttons">
+    {% if company %}
+        <a id="all_companies_button" href="/all_companies_page"><div class="back_button">Back</div></a>
+    {% endif %}
+    <a href="/main_page/{{ 'no_update' }}"><div class="back_reload_button">Back to menu</div></a>
+</div>
+
+<div id="content_block" class="content">
+    {% if company %}
+        <div class="name">{{ company }}</div>
+    {% else %}
+        <div class="name">All vacancies</div>
+    {% endif %}
+    {% for vacancy in vacancies %}
+    <a href="{{ vacancy[2] }}" target="_blank">
+        <div class="vacancy">
+            {{ vacancy[0] }}<br>
+            {% if vacancy[1] != '0' %}
+                Salary: {{ vacancy[1] }}
+            {% else %}
+                Salary: no data
+            {% endif %}
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+<div id="loading">
+    <img class="gear" src="{{ url_for('static', filename='/img/gear.svg') }}" alt="logoTel">
+    <br>
+    <label class="loading_text">loading...</label>
+</div>
+
+<script>
+document.getElementById("all_companies_button").onclick = function() {
+    this.className = "button_clicked";
+    document.getElementById("back_buttons_block").style.display = "none"
+    document.getElementById("content_block").style.display = "none"
+    document.getElementById("loading").style.display = "block"
+}
+</script>
+{% endblock %}

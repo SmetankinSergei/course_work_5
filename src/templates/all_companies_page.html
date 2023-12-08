@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/start_page.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/all_companies_page.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="companies_block">
+    {% for company in companies_data %}
+    <div class="company">
+        <a id="company_button" href="/company_vacancies_page/{{ company }}"><div class="button">{{ company }}</div></a>
+        <div class="vacancies_count">{{ companies_data[company] }}</div>
+    </div>
+    {% endfor %}
+</div>
+<div id="back_buttons_block" class="back_buttons">
+    <a href="/main_page/{{ 'no_update' }}"><div class="back_button">Back</div></a>
+    <a id="reload_button" href="/main_page/{{ 'update' }}"><div class="back_reload_button">Back and reload</div></a>
+</div>
+
+<div id="loading">
+    <img class="gear" src="{{ url_for('static', filename='/img/gear.svg') }}" alt="logoTel">
+    <br>
+    <label class="loading_text">loading...</label>
+</div>
+
+<script>
+document.getElementById("company_button").onclick = function() {
+    this.className = "button_clicked";
+    document.getElementById("companies_block").style.display = "none"
+    document.getElementById("back_buttons_block").style.display = "none"
+    document.getElementById("loading").style.display = "block"
+}
+
+document.getElementById("reload_button").onclick = function() {
+    this.className = "button_clicked";
+    document.getElementById("companies_block").style.display = "none"
+    document.getElementById("back_buttons_block").style.display = "none"
+    document.getElementById("loading").style.display = "block"
+}
+</script>
+{% endblock %}
