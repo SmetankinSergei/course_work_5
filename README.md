@@ -22,3 +22,23 @@
 <li>"Get average salary" выведет среднюю зарплату в базе данных на этой же странице</li>
 <li>Кнопки, предлагающие вернуться на предыдущую страницу, содержащие слово "reload" обновляют базу данных</li>
 </ol>
+
+<h3>Таблицы:</h3>
+<pre>CREATE TABLE companies
+(
+	line_id serial,
+	company_id varchar(10) UNIQUE NOT NULL,
+	company_name varchar(100)
+);
+
+CREATE TABLE vacancies
+(
+	vacancy_id serial,
+	vacancy_name varchar(100),
+	salary int,
+	vacancy_link varchar,
+	company_id varchar(10) REFERENCES companies(company_id)
+);</pre>
+
+<h3>Зависимости:</h3>
+<p>requirements.txt</p>
